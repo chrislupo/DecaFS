@@ -15,6 +15,8 @@ Then, use the startup script either directly from one of your nodes or from a se
  1. Make a copy of `scripts/sample_config.json` as e.g. `scripts/config.json`, changing the IP addresses to point to the nodes that have the appropriate executables.
  2. Run `python scripts/startup.py --config scripts/config.json`. This should print messages indicating that each of nodes 1-4 has started successfully.
  
+Alternately, you can use [tmuxinator](https://github.com/tmuxinator/tmuxinator) to launch DecaFS. Running `tmuxinator decafs_local` from the root of the source tree will launch a local instance of DecaFS. The configuration file `scripts/decafs.yml` can be placed in `~/.tmuxinator/` and modified as appropriate to launch DecaFS on your cluster.
+
 Troubleshooting DecaFS
 ----------------------
 If DecaFS doesn't start correctly, this may be due to

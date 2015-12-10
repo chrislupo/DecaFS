@@ -1,0 +1,29 @@
+# ~/.tmuxinator/decafs.yml
+
+name: decafs
+root: ~/
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - barista:
+          - ssh root@192.168.1.13
+          - rm ./decafs_metadata*
+          - ./decafs_barista 256 128 decafs_metadata 4 3899
+        - espresso1:
+          - ssh root@192.168.1.11
+          - sleep 2
+          - ./decafs_espresso 1 decafs_metadata decafs_filesystem 192.168.1.13 3899
+        - espresso2:
+          - ssh root@192.168.1.12
+          - sleep 2
+          - ./decafs_espresso 2 decafs_metadata decafs_filesystem 192.168.1.13 3899
+        - espresso3:
+          - ssh root@192.168.1.14
+          - sleep 2
+          - ./decafs_espresso 3 decafs_metadata decafs_filesystem 192.168.1.13 3899
+        - espresso4:
+          - ssh root@192.168.1.15
+          - sleep 2
+          - ./decafs_espresso 4 decafs_metadata decafs_filesystem 192.168.1.13 3899

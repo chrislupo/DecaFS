@@ -1,0 +1,22 @@
+name: decafs_local
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - barista:
+          - mkdir -p ./tmp
+          - rm -f ./tmp/decafs_barista*
+          - ./bin/decafs_barista 256 128 ./tmp/decafs_barista 4 3899
+        - espresso1:
+          - sleep 2
+          - ./bin/decafs_espresso 1 ./tmp/decafs_metadata1 ./tmp/decafs_filesystem1 localhost 3899
+        - espresso2:
+          - sleep 2
+          - ./bin/decafs_espresso 2 ./tmp/decafs_metadata2 ./tmp/decafs_filesystem2 localhost 3899
+        - espresso3:
+          - sleep 2
+          - ./bin/decafs_espresso 3 ./tmp/decafs_metadata3 ./tmp/decafs_filesystem3 localhost 3899
+        - espresso4:
+          - sleep 2
+          - ./bin/decafs_espresso 4 ./tmp/decafs_metadata4 ./tmp/decafs_filesystem4 localhost 3899
